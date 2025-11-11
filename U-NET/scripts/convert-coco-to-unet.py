@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 # ==================== CONFIGURATION ====================
 SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR.parent / 'data'
-INPUT_JSON = DATA_DIR / 'annotations' / 'coco-annotation.json'
+INPUT_JSON = DATA_DIR / 'annotations' / 'coco-annotation-merged-62images.json'
 OUTPUT_MASK_DIR = DATA_DIR / 'floorplan_masks'           # For training
 OUTPUT_VIZ_DIR = DATA_DIR / 'floorplan_masks_viz'        # For visualization
 OUTPUT_MASK_DIR.mkdir(parents=True, exist_ok=True)
