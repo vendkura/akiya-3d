@@ -1,0 +1,63 @@
+name: akiya-3d
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Core Deep Learning Frameworks (conda handles CUDA better)
+  - python>=3.9
+  - pytorch>=1.13.0
+  - torchvision>=0.14.0
+  - cudatoolkit=11.8  # Adjust based on your GPU, or use cpuonly for CPU-only
+  
+  # Scientific Computing
+  - numpy>=1.23.0
+  - scipy>=1.10.0
+  - pandas>=2.0.0
+  
+  # Computer Vision & Image Processing
+  - opencv>=4.7.0
+  - pillow>=9.5.0
+  - scikit-image>=0.20.0
+  
+  # Visualization
+  - matplotlib>=3.7.0
+  
+  # Utilities
+  - tqdm>=4.65.0
+  
+  # CRF Post-processing (from conda-forge)
+  - pydensecrf
+  
+  # Geometric & Spatial Processing (available in conda)
+  - shapely>=2.0.0
+  - svgwrite>=1.4.3
+  
+  # Database (available in conda)
+  - lmdb>=1.4.0
+  
+  # Web Framework (available in conda)
+  - fastapi>=0.100.0
+  - uvicorn>=0.23.0
+  
+  # Logging (available in conda)
+  - tensorboard
+  
+  # Pip-only packages (not available or problematic in conda)
+  - pip
+  - pip:
+    # Segmentation & Detection Libraries
+    - segmentation-models-pytorch>=0.3.3
+    - albumentations>=1.3.0
+    
+    # MMDetection ecosystem (pip only)
+    - mmcv>=2.0.0
+    - mmdet>=3.0.0
+    - mmengine>=0.7.0
+    
+    # SVG tools (pip has newer versions)
+    - svgpathtools>=1.5.0
+    
+    # TensorboardX (specific version for compatibility)
+    - tensorboardX>=2.6
