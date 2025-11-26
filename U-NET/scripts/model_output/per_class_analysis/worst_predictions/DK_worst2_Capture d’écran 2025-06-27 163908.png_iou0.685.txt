@@ -1,0 +1,3 @@
+Class: DK
+Image: Capture d’écran 2025-06-27 163908.png
+IoU: 0.6848

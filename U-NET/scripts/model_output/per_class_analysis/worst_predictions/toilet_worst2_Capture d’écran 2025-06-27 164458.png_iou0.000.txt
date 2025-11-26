@@ -1,0 +1,3 @@
+Class: toilet
+Image: Capture d’écran 2025-06-27 164458.png
+IoU: 0.0000

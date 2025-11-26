@@ -1,0 +1,45 @@
+======================================================================
+PER-CLASS IoU ANALYSIS REPORT
+======================================================================
+
+Overall Mean IoU: 0.2385
+Overall Std IoU:  0.3023
+Classes evaluated: 16/16
+
+----------------------------------------------------------------------
+PER-CLASS STATISTICS
+----------------------------------------------------------------------
+Class                IoU        Pixels          Status         
+----------------------------------------------------------------------
+DK                   0.9041     62              GOOD           
+LDK                  0.0673     40              POOR           
+bedroom              0.8107     62              GOOD           
+closet               0.5378     62              GOOD           
+dinning room         0.0000     9               POOR           
+door                 0.0002     54              POOR           
+entrance             0.0000     34              POOR           
+kitchen              0.0000     22              POOR           
+living room          0.0000     3               POOR           
+outdoor space        0.1617     61              POOR           
+room                 0.5413     62              GOOD           
+sliding door         0.0486     59              POOR           
+stairs               0.4297     61              MODERATE       
+toilet               0.0009     44              POOR           
+washroom             0.3120     46              MODERATE       
+windows              0.0010     57              POOR           
+
+----------------------------------------------------------------------
+TOP CLASS CONFUSIONS (excluding diagonal)
+----------------------------------------------------------------------
+         living room → room                 : 95.9%
+              toilet → room                 : 62.7%
+                door → room                 : 55.9%
+        dinning room → DK                   : 50.7%
+             kitchen → bedroom              : 50.7%
+            entrance → closet               : 46.5%
+             windows → DK                   : 45.8%
+        sliding door → bedroom              : 41.2%
+        sliding door → room                 : 31.2%
+            entrance → room                 : 24.6%
+
+======================================================================
