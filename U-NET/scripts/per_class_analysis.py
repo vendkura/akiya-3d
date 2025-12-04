@@ -9,22 +9,21 @@ from albumentations import Compose, Resize, Normalize
 from albumentations.pytorch import ToTensorV2
 
 # CONFIG
-MODEL_PATH = "model_output/60-images-experiment/best_model.pth"
+MODEL_PATH = "model_output/best_model.pth"
 TEST_IMAGES_DIR = "../data/floorplan"
-TEST_MASKS_DIR = "../data/floorplan_masks"
-OUTPUT_DIR = "model_output/per_class_analysis"
+TEST_MASKS_DIR = "../data/floorplan_masks_13classes"
+OUTPUT_DIR = "model_output/per_class_analysis/13_classes"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# CLASS NAMES - Extracted from COCO annotations
-# Note: "dinning room" has a typo in annotations, keeping it for consistency
+# CLASS NAMES - 13 consolidated classes
 CLASS_NAMES = [
-    "DK", "LDK", "bedroom", "closet", "dinning room", "door",
-    "entrance", "kitchen", "living room", "outdoor space", "room",
-    "sliding door", "stairs", "toilet", "washroom", "windows"
+    "dining_area", "bathroom", "bedroom", "closet", "room",
+    "door", "entrance", "kitchen", "outdoor_space",
+    "sliding_door", "stairs", "window", "balcony"
 ]
 
 def load_model():
-    model = smp.Unet(encoder_name="resnet34", encoder_weights=None, in_channels=3, classes=16)
+    model = smp.Unet(encoder_name="resnet34", encoder_weights=None, in_channels=3, classes=13)
     model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
     model.to(DEVICE).eval()
     return model
@@ -45,7 +44,7 @@ def predict(model, img_path):
         pred = torch.argmax(output, dim=1)[0].cpu().numpy()
     return pred
 
-def calculate_iou_per_class(pred, target, num_classes=16):
+def calculate_iou_per_class(pred, target, num_classes=13):
     """Calculate IoU for each class."""
     ious = []
     for cls in range(num_classes):
@@ -60,7 +59,7 @@ def calculate_iou_per_class(pred, target, num_classes=16):
         ious.append(iou)
     return np.array(ious)
 
-def build_confusion_matrix(pred, target, num_classes=16):
+def build_confusion_matrix(pred, target, num_classes=13):
     """Build confusion matrix."""
     cm = np.zeros((num_classes, num_classes), dtype=np.int64)
     for true_cls in range(num_classes):
@@ -278,7 +277,7 @@ test_images = list(Path(TEST_IMAGES_DIR).glob("*.png")) + list(Path(TEST_IMAGES_
 
 # Storage
 all_ious = []
-all_cm = np.zeros((16, 16), dtype=np.int64)
+all_cm = np.zeros((13, 13), dtype=np.int64)
 predictions_dict = {}
 image_data_dict = {}  # Store image data for visualization
 

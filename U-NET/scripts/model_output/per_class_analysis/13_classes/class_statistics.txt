@@ -1,0 +1,42 @@
+======================================================================
+PER-CLASS IoU ANALYSIS REPORT
+======================================================================
+
+Overall Mean IoU: 0.2756
+Overall Std IoU:  0.3279
+Classes evaluated: 12/13
+
+----------------------------------------------------------------------
+PER-CLASS STATISTICS
+----------------------------------------------------------------------
+Class                IoU        Pixels          Status         
+----------------------------------------------------------------------
+dining_area          0.9056     62              GOOD           
+bathroom             0.2972     62              POOR           
+bedroom              0.8234     62              GOOD           
+closet               0.5442     62              GOOD           
+room                 0.5336     62              GOOD           
+door                 0.0000     38              POOR           
+entrance             0.0004     50              POOR           
+kitchen              0.1851     62              POOR           
+outdoor_space        0.0007     61              POOR           
+sliding_door         0.0016     58              POOR           
+stairs               0.0002     60              POOR           
+window               0.0156     62              POOR           
+balcony              N/A        0               NOT PRESENT    
+
+----------------------------------------------------------------------
+TOP CLASS CONFUSIONS (excluding diagonal)
+----------------------------------------------------------------------
+                door → closet               : 71.4%
+       outdoor_space → closet               : 69.6%
+            entrance → kitchen              : 47.9%
+              window → dining_area          : 42.2%
+        sliding_door → bedroom              : 37.2%
+              stairs → closet               : 32.1%
+            entrance → closet               : 25.4%
+        sliding_door → closet               : 25.3%
+              stairs → room                 : 22.4%
+            entrance → bedroom              : 19.6%
+
+======================================================================

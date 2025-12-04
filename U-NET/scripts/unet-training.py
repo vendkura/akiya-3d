@@ -17,12 +17,29 @@ class Config:
     SCRIPT_DIR = Path(__file__).parent
     DATA_DIR = SCRIPT_DIR.parent / 'data'
     IMAGES_DIR = DATA_DIR / 'floorplan'          # Your images folder
-    MASKS_DIR = DATA_DIR / 'floorplan_masks'     # Training masks
+    MASKS_DIR = DATA_DIR / 'floorplan_masks_13classes'     # Training masks (13 classes)
     
     # Model
     ENCODER = 'resnet34'
     ENCODER_WEIGHTS = 'imagenet'
-    NUM_CLASSES = 16  # Your 16 categories
+    NUM_CLASSES = 13  # Remapped from 16 to 13 categories
+    
+    # Class names (13 classes after consolidation)
+    CLASS_NAMES = [
+        "dining_area",    # 0 - merged: DK, LDK, dinning room
+        "bathroom",       # 1 - merged: toilet, washroom
+        "bedroom",        # 2
+        "room",           # 3 - merged: includes living room
+        "closet",         # 4
+        "entrance",       # 5
+        "kitchen",        # 6
+        "outdoor_space",  # 7
+        "stairs",         # 8
+        "sliding_door",   # 9
+        "door",           # 10
+        "windows",        # 11
+        "background",     # 12
+    ]
     
     # Training
     BATCH_SIZE = 4
