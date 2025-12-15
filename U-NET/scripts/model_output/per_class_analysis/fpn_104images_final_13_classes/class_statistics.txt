@@ -1,0 +1,42 @@
+======================================================================
+PER-CLASS IoU ANALYSIS REPORT - FPN MODEL
+======================================================================
+
+Overall Mean IoU: 0.4783
+Overall Std IoU:  0.2085
+Classes evaluated: 12/13
+
+----------------------------------------------------------------------
+PER-CLASS STATISTICS
+----------------------------------------------------------------------
+Class                IoU        Pixels          Status         
+----------------------------------------------------------------------
+dining_area          0.9295     104             GOOD           
+bathroom             0.4873     45              MODERATE       
+bedroom              0.7747     64              GOOD           
+closet               0.5714     63              GOOD           
+room                 0.5812     63              GOOD           
+door                 0.3787     36              MODERATE       
+entrance             0.2162     23              POOR           
+kitchen              0.3047     39              MODERATE       
+outdoor_space        0.5616     58              GOOD           
+sliding_door         0.2291     56              POOR           
+stairs               0.3803     56              MODERATE       
+window               0.3247     58              MODERATE       
+balcony              N/A        0               NOT PRESENT    
+
+----------------------------------------------------------------------
+TOP CLASS CONFUSIONS (excluding diagonal)
+----------------------------------------------------------------------
+              window → dining_area          : 34.5%
+        sliding_door → bedroom              : 32.3%
+            entrance → dining_area          : 21.1%
+                door → dining_area          : 14.7%
+            bathroom → dining_area          : 14.3%
+            entrance → bedroom              : 14.1%
+        sliding_door → dining_area          : 14.1%
+              stairs → dining_area          : 12.4%
+              closet → dining_area          : 11.8%
+              stairs → bedroom              : 10.0%
+
+======================================================================

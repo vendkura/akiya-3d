@@ -1,6 +1,6 @@
 """
 FPN Training Script for 104-image dataset with 13 classes.
-Quick experiment to test if FPN improves small feature detection.
+Experiment 05 FINAL: Training on fully-annotated 62+42 images (rooms included).
 """
 
 import torch
@@ -18,11 +18,11 @@ import json
 
 # ==================== CONFIGURATION ====================
 class Config:
-    # Paths - USE EXISTING 62-IMAGE SETUP FOR QUICK TEST
+    # Paths - USE FINAL 104-IMAGE DATASET WITH COMPLETE ANNOTATIONS
     SCRIPT_DIR = Path(__file__).parent
     DATA_DIR = SCRIPT_DIR.parent / 'data'
-    IMAGES_DIR = DATA_DIR / 'floorplan'
-    MASKS_DIR = DATA_DIR / 'floorplan_masks_13classes'
+    IMAGES_DIR = DATA_DIR / 'floorplan_104_final'
+    MASKS_DIR = DATA_DIR / 'floorplan_masks_104_13classes_final'
     
     # Model - CHANGED TO FPN
     MODEL_ARCH = 'FPN'  # Feature Pyramid Network
@@ -49,7 +49,7 @@ class Config:
     TEST_SPLIT = 0.15
     
     # Output
-    OUTPUT_DIR = Path("model_output/fpn_62images")
+    OUTPUT_DIR = Path("model_output/fpn_104images_final")
     OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
 # ==================== DATASET ====================
@@ -240,7 +240,7 @@ def visualize_predictions(model, dataset, device, num_samples=4, save_path=None)
 # ==================== MAIN ====================
 def main():
     print("="*70)
-    print("FPN TRAINING - 62 IMAGES, 13 CLASSES (Quick Test)")
+    print("FPN TRAINING - 104 IMAGES FINAL, 13 CLASSES (Experiment 05)")
     print("="*70)
     print(f"\nConfiguration:")
     print(f"  Model: {Config.MODEL_ARCH}")

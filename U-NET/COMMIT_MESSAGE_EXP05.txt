@@ -1,0 +1,21 @@
+experiment: Dataset size study reveals quality > quantity - 62 images beat 104
+(1) Consolidated 62+42 datasets: 62 baseline + 42 newly annotated images (104 total)
+(2) Trained FPN twice: incomplete 35.6% val IoU → complete 32.4% val IoU vs 62 baseline 38.6%
+(3) Per-class analysis: 62-image model wins 11/12 classes despite 42% less data
+(4) Key finding: Clean 62 images (53.5% mIoU) outperform mixed 104 images (47.8% mIoU) by 5.7%
+(5) Decision: Use 62-image FPN model for production - quality beats quantity
+(6) Created experiment documentation and GitHub issues for work session tracking
+
+Files added:
+- U-NET/scripts/simple_consolidate_104.py
+- U-NET/scripts/final_consolidate_104.py
+- U-NET/scripts/create_experiment_05_issues.py
+- U-NET/experiment_05_dataset_size.md
+- U-NET/data/floorplan_104_final/
+- U-NET/data/floorplan_masks_104_13classes_final/
+- U-NET/scripts/model_output/fpn_104images/
+- U-NET/scripts/model_output/fpn_104images_final/
+- U-NET/scripts/model_output/per_class_analysis/fpn_104images_13_classes/
+- U-NET/scripts/model_output/per_class_analysis/fpn_104images_final_13_classes/
+
+(next) Repository cleanup and 3D reconstruction pipeline (1-month sprint to Jan 16)

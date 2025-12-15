@@ -9,10 +9,10 @@ from albumentations import Compose, Resize, Normalize
 from albumentations.pytorch import ToTensorV2
 
 # CONFIG
-MODEL_PATH = "model_output/fpn_62images/best_model.pth"
-TEST_IMAGES_DIR = "../data/floorplan"
-TEST_MASKS_DIR = "../data/floorplan_masks_13classes"
-OUTPUT_DIR = "model_output/per_class_analysis/fpn_62images_13_classes"
+MODEL_PATH = "model_output/fpn_104images_final/best_model.pth"
+TEST_IMAGES_DIR = "../data/floorplan_104_final"
+TEST_MASKS_DIR = "../data/floorplan_masks_104_13classes_final"
+OUTPUT_DIR = "model_output/per_class_analysis/fpn_104images_final_13_classes"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # CLASS NAMES - 13 consolidated classes
