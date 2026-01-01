@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Floor Plan Reconstruction - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 2px;
+            margin-right: 12px;
+        }
+
+        /* Upload Area */
+        .upload-area {
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f7f9ff;
+        }
+
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: #eef2ff;
+        }
+
+        .upload-area.dragging {
+            border-color: #764ba2;
+            background: #eef2ff;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .upload-hint {
+            font-size: 14px;
+            color: #999;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        /* File Info */
+        .file-info {
+            background: #f7f9ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            display: none;
+            align-items: center;
+        }
+
+        .file-info.show {
+            display: flex;
+        }
+
+        .file-icon {
+            font-size: 28px;
+            margin-right: 15px;
+        }
+
+        .file-details {
+            flex: 1;
+        }
+
+        .file-name {
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .file-size {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        /* Status */
+        .status-box {
+            background: #f7f9ff;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .status-box.show {
+            display: block;
+        }
+
+        .status-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .status-message {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-success {
+            border-left-color: #4caf50;
+        }
+
+        .status-success .status-title {
+            color: #4caf50;
+        }
+
+        .status-error {
+            border-left-color: #f44336;
+        }
+
+        .status-error .status-title {
+            color: #f44336;
+        }
+
+        /* Results */
+        .results {
+            display: none;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .result-item {
+            background: #f7f9ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .result-value {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .download-btn {
+            background: #4caf50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Preview */
+        .preview-section {
+            margin-top: 20px;
+        }
+
+        .preview-container {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preview-placeholder {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f7f9ff;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .upload-area {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ 3D Floor Plan Reconstruction</h1>
+            <p>Convert 2D floor plans to 3D OBJ models instantly</p>
+        </div>
+
+        <div class="content">
+            <!-- Upload Section -->
+            <div class="section">
+                <div class="section-title">Step 1: Upload Floor Plan</div>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📐</div>
+                    <div class="upload-text">Drag floor plan here or click to select</div>
+                    <div class="upload-hint">Supported: PNG, JPG (max 10 MB)</div>
+                    <input type="file" id="fileInput" accept=".png,.jpg,.jpeg">
+                </div>
+                <div class="file-info" id="fileInfo">
+                    <div class="file-icon">📄</div>
+                    <div class="file-details">
+                        <div class="file-name" id="fileName"></div>
+                        <div class="file-size" id="fileSize"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="section">
+                <div class="section-title">Step 2: Process</div>
+                <div class="button-group">
+                    <button class="btn-primary" id="processBtn" disabled>
+                        ⚡ Process Image
+                    </button>
+                    <button class="btn-secondary" id="clearBtn">Clear</button>
+                </div>
+                <div class="status-box" id="statusBox">
+                    <div class="status-title">
+                        <span class="spinner" id="spinner"></span>
+                        <span id="statusTitle">Processing...</span>
+                    </div>
+                    <div class="status-message" id="statusMessage"></div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results" id="resultsSection">
+                <div class="section-title">Step 3: Download</div>
+                <div class="result-item">
+                    <div>
+                        <div class="result-label">OBJ File</div>
+                        <div class="result-value" id="objFileSize"></div>
+                    </div>
+                    <a href="#" class="download-btn" id="downloadObjBtn">Download</a>
+                </div>
+                <div class="result-item">
+                    <div>
+                        <div class="result-label">MTL File</div>
+                        <div class="result-value" id="mtlFileSize"></div>
+                    </div>
+                    <a href="#" class="download-btn" id="downloadMtlBtn">Download</a>
+                </div>
+                <div class="result-item">
+                    <div>
+                        <div class="result-label">Model Info</div>
+                        <div class="result-value" id="modelInfo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>3D Floor Plan Reconstruction Demo | Powered by FPN + Boundary Extraction</p>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let selectedFile = null;
+        let taskId = null;
+
+        // DOM Elements
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const processBtn = document.getElementById('processBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const statusBox = document.getElementById('statusBox');
+        const statusTitle = document.getElementById('statusTitle');
+        const statusMessage = document.getElementById('statusMessage');
+        const resultsSection = document.getElementById('resultsSection');
+        const downloadObjBtn = document.getElementById('downloadObjBtn');
+        const downloadMtlBtn = document.getElementById('downloadMtlBtn');
+        const modelInfo = document.getElementById('modelInfo');
+
+        // Upload Area Events
+        uploadArea.addEventListener('click', () => fileInput.click());
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragging');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragging');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragging');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                handleFileSelect();
+            }
+        });
+
+        fileInput.addEventListener('change', handleFileSelect);
+
+        // Handle File Selection
+        function handleFileSelect() {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            // Validate
+            const validTypes = ['image/png', 'image/jpeg'];
+            const maxSize = 10 * 1024 * 1024; // 10 MB
+
+            if (!validTypes.includes(file.type)) {
+                alert('Invalid file type. Please upload PNG or JPG.');
+                return;
+            }
+
+            if (file.size > maxSize) {
+                alert('File too large. Max size: 10 MB');
+                return;
+            }
+
+            selectedFile = file;
+            fileName.textContent = file.name;
+            fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;
+            fileInfo.classList.add('show');
+            processBtn.disabled = false;
+
+            // Upload immediately
+            uploadFile();
+        }
+
+        // Upload File
+        async function uploadFile() {
+            if (!selectedFile) return;
+
+            processBtn.disabled = true;
+            showStatus('Uploading...', 'processing');
+
+            try {
+                const formData = new FormData();
+                formData.append('file', selectedFile);
+
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    taskId = data.task_id;
+                    showStatus('Upload complete! Click "Process Image" to generate 3D model.', 'processing');
+                    processBtn.disabled = false;
+                } else {
+                    showStatus(`Error: ${data.message}`, 'error');
+                    processBtn.disabled = true;
+                }
+            } catch (error) {
+                showStatus(`Upload failed: ${error.message}`, 'error');
+                processBtn.disabled = true;
+            }
+        }
+
+        // Process
+        processBtn.addEventListener('click', async () => {
+            if (!taskId) {
+                alert('Please upload a file first');
+                return;
+            }
+
+            processBtn.disabled = true;
+            showStatus('Processing floor plan... This may take a moment.', 'processing');
+
+            try {
+                const response = await fetch(`/api/process/${taskId}`, {
+                    method: 'POST'
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    showStatus('✓ Processing complete!', 'success');
+                    
+                    // Show results
+                    displayResults(data);
+                } else {
+                    showStatus(`Error: ${data.message}`, 'error');
+                    processBtn.disabled = false;
+                }
+            } catch (error) {
+                showStatus(`Processing failed: ${error.message}`, 'error');
+                processBtn.disabled = false;
+            }
+        });
+
+        // Display Results
+        function displayResults(data) {
+            const metadata = data.metadata;
+            const extrusion = metadata.steps.wall_extrusion;
+
+            // Model info
+            modelInfo.textContent = `${extrusion.num_vertices} vertices, ${extrusion.num_faces} faces`;
+
+            // File sizes (estimate)
+            document.getElementById('objFileSize').textContent = 'Ready';
+            document.getElementById('mtlFileSize').textContent = 'Ready';
+
+            // Download links
+            downloadObjBtn.href = `/api/download/${taskId}/obj`;
+            downloadObjBtn.download = data.obj_file;
+            
+            downloadMtlBtn.href = `/api/download/${taskId}/mtl`;
+            downloadMtlBtn.download = data.mtl_file;
+
+            // Show results
+            resultsSection.classList.add('show');
+        }
+
+        // Show Status
+        function showStatus(message, type = 'info') {
+            statusBox.classList.add('show');
+            statusBox.classList.remove('status-success', 'status-error');
+            
+            if (type === 'success') {
+                statusBox.classList.add('status-success');
+                statusTitle.innerHTML = '✓ ' + message;
+                document.getElementById('spinner').style.display = 'none';
+            } else if (type === 'error') {
+                statusBox.classList.add('status-error');
+                statusTitle.innerHTML = '✗ ' + message;
+                document.getElementById('spinner').style.display = 'none';
+            } else {
+                statusTitle.innerHTML = '<span class="spinner"></span>' + message;
+            }
+        }
+
+        // Clear
+        clearBtn.addEventListener('click', () => {
+            selectedFile = null;
+            taskId = null;
+            fileInput.value = '';
+            fileInfo.classList.remove('show');
+            statusBox.classList.remove('show');
+            resultsSection.classList.remove('show');
+            processBtn.disabled = true;
+        });
+
+        // Check health on load
+        window.addEventListener('load', async () => {
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                if (!data.pipeline_ready) {
+                    alert('Warning: Pipeline may not be fully initialized. Please check server logs.');
+                }
+            } catch (e) {
+                console.error('Health check failed:', e);
+            }
+        });
+    </script>
+</body>
+</html>
