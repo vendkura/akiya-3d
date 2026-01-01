@@ -1,14 +1,3 @@
-"""
-Wall Extrusion - Simplified Version
-Convert 2D Room Polygons to 3D Geometry (No offset, clean geometry)
-
-Simplified approach:
-- Single-surface walls (no thickness offset)
-- Direct floor-to-ceiling wall connection
-- Proper polygon triangulation using ear clipping
-- Per-room coloring
-- Clean, continuous geometry
-"""
 
 import json
 import numpy as np
@@ -42,22 +31,27 @@ class SimpleWallExtrusion:
         self.boundaries_data = None
         self.scale_factor = 1.0
         
-    def load_boundaries_json(self, json_path: str) -> Dict:
+    def load_boundaries_json(self, json_path):
         """
-        Load boundary extraction results.
+        Load boundary data from JSON file or dict.
         
         Args:
-            json_path: Path to JSON from boundary_extraction.py
+            json_path: Path to boundaries JSON file or dict with boundaries data
         
         Returns:
             Boundaries data dict
         """
-        with open(json_path, 'r') as f:
-            self.boundaries_data = json.load(f)
+        # Handle dict input
+        if isinstance(json_path, dict):
+            self.boundaries_data = json_path
+            logger.info(f"Loaded boundaries dict with {len(self.boundaries_data.get('rooms', []))} rooms")
+        else:
+            # Handle file path input
+            with open(json_path, 'r') as f:
+                self.boundaries_data = json.load(f)
+            logger.info(f"Loaded {len(self.boundaries_data['rooms'])} rooms from {json_path}")
         
         self.scale_factor = self.boundaries_data.get("scale_factor", 1.0)
-        
-        logger.info(f"Loaded {len(self.boundaries_data['rooms'])} rooms from {json_path}")
         logger.info(f"Scale factor: {self.scale_factor} m/pixel")
         
         return self.boundaries_data
