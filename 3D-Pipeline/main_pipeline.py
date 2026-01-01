@@ -15,7 +15,7 @@ import logging
 # Import pipeline components
 from fpn_inference import FPNInference
 from boundary_extraction import BoundaryExtractor
-from wall_extrusion import SimpleWallExtrusion
+from wall_extrusion_v3 import WallExtrusion3D  # Use improved v3
 from export_obj import OBJExporter
 
 
@@ -69,8 +69,8 @@ class Pipeline3D:
         logger.info("Initializing boundary extractor...")
         self.extractor = BoundaryExtractor()
         
-        logger.info("Initializing wall extrusion...")
-        self.extrusion = SimpleWallExtrusion()
+        logger.info("Initializing wall extrusion (v3 - improved)...")
+        self.extrusion = WallExtrusion3D()
         
         logger.info("Initializing OBJ exporter...")
         self.exporter = OBJExporter()
@@ -201,12 +201,13 @@ class Pipeline3D:
             # Save geometry JSON
             if save_intermediate:
                 geometry_path = task_dir / f"{output_name}_geometry.json"
+                # Convert numpy types to Python native types for JSON serialization
                 geometry_for_json = {
-                    'vertices': [list(v) for v in geometry['vertices']],
-                    'faces': [list(f) for f in geometry['faces']],
-                    'normals': [list(n) for n in geometry['normals']],
-                    'colors': [list(c) for c in geometry['colors']],
-                    'room_mapping': geometry['room_mapping']
+                    'vertices': [[float(x) for x in v] for v in geometry['vertices']],
+                    'faces': [[int(x) for x in f] for f in geometry['faces']],
+                    'normals': [[float(x) for x in n] for n in geometry['normals']],
+                    'colors': [[float(x) for x in c] for c in geometry['colors']],
+                    'room_mapping': {str(k): [int(v) for v in vs] for k, vs in geometry['room_mapping'].items()}
                 }
                 with open(geometry_path, 'w') as f:
                     json.dump(geometry_for_json, f, indent=2)
