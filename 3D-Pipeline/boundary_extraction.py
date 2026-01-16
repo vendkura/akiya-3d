@@ -97,6 +97,24 @@ class BoundaryExtractor:
         
         logger.info(f"Loaded mask shape: {self.mask.shape}, Image shape: {self.original_image.shape}")
     
+    def load_mask_array(self, mask_array: np.ndarray):
+        """
+        Load mask from numpy array directly (no file I/O).
+        
+        Args:
+            mask_array: Numpy array with shape (H, W), values 0-13
+        """
+        if not isinstance(mask_array, np.ndarray):
+            raise TypeError("mask_array must be a numpy array")
+        
+        if mask_array.ndim != 2:
+            raise ValueError(f"mask_array must be 2D, got shape {mask_array.shape}")
+        
+        self.mask = mask_array.astype(np.uint8)
+        self.original_image = cv2.cvtColor(self.mask, cv2.COLOR_GRAY2BGR)
+        
+        logger.info(f"Loaded mask array with shape: {self.mask.shape}")
+    
     def extract_room_polygons(self) -> Dict:
         """
         Extract room polygons for each class.

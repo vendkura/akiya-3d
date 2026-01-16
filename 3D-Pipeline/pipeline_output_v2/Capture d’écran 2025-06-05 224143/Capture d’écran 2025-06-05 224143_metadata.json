@@ -1,0 +1,74 @@
+{
+  "image_name": "Capture d\u2019\u00e9cran 2025-06-05 224143",
+  "timestamp": "2026-01-15T16:35:35.517869",
+  "steps": {
+    "fpn_inference": {
+      "mask_shape": [
+        1294,
+        1580
+      ],
+      "original_shape": [
+        1294,
+        1580
+      ],
+      "classes_detected": [
+        "dining_area",
+        "bathroom",
+        "bedroom",
+        "closet",
+        "room",
+        "door",
+        "entrance",
+        "kitchen",
+        "outdoor_space",
+        "sliding_door",
+        "stairs",
+        "window"
+      ],
+      "mask_path": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224143/Capture d\u2019\u00e9cran 2025-06-05 224143_mask.png"
+    },
+    "boundary_extraction": {
+      "total_rooms": 16,
+      "total_walls": 77,
+      "scale_factor": 0.012658227848101266,
+      "stats": {
+        "total_contours_found": 58,
+        "contours_filtered_by_area": 42,
+        "valid_polygons": 16,
+        "convex_polygons": 6,
+        "non_convex_polygons": 10
+      },
+      "boundaries_path": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224143/Capture d\u2019\u00e9cran 2025-06-05 224143_boundaries_v2.json"
+    },
+    "wall_extrusion": {
+      "vertices": 226,
+      "faces": 388,
+      "triangles": 388,
+      "rooms_processed": 16,
+      "rooms_skipped": 0,
+      "bounds": {
+        "min": [
+          2.1139240506329116,
+          0.0,
+          2.0759493670886076
+        ],
+        "max": [
+          15.455696202531644,
+          2.5,
+          15.822784810126581
+        ],
+        "size": [
+          13.341772151898732,
+          2.5,
+          13.746835443037973
+        ]
+      }
+    },
+    "obj_export": {
+      "obj_file": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224143/Capture d\u2019\u00e9cran 2025-06-05 224143.obj",
+      "mtl_file": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224143/Capture d\u2019\u00e9cran 2025-06-05 224143.mtl",
+      "obj_size_kb": 15.4287109375,
+      "mtl_size_kb": 0.7763671875
+    }
+  }
+}

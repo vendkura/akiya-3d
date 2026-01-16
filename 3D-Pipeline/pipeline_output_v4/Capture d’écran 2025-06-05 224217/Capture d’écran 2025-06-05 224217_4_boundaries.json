@@ -1,0 +1,521 @@
+{
+  "rooms": [
+    {
+      "polygon_id": 0,
+      "class": "bathroom",
+      "class_id": 2,
+      "vertices": [
+        [
+          1080,
+          662
+        ],
+        [
+          1081,
+          752
+        ],
+        [
+          1002,
+          752
+        ],
+        [
+          1002,
+          662
+        ]
+      ],
+      "color": [
+        255,
+        200,
+        124
+      ],
+      "area": 7108.5,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        1041.2505307855627,
+        707.0955414012739
+      ]
+    },
+    {
+      "polygon_id": 1,
+      "class": "bathroom",
+      "class_id": 2,
+      "vertices": [
+        [
+          1125,
+          166
+        ],
+        [
+          1125,
+          507
+        ],
+        [
+          822,
+          506
+        ],
+        [
+          822,
+          166
+        ]
+      ],
+      "color": [
+        255,
+        200,
+        124
+      ],
+      "area": 103322.5,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        973.5741556534508,
+        336.2501223690651
+      ]
+    },
+    {
+      "polygon_id": 2,
+      "class": "bathroom",
+      "class_id": 2,
+      "vertices": [
+        [
+          592,
+          163
+        ],
+        [
+          592,
+          486
+        ],
+        [
+          264,
+          486
+        ],
+        [
+          264,
+          163
+        ]
+      ],
+      "color": [
+        255,
+        200,
+        124
+      ],
+      "area": 105636.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        428.0,
+        324.5
+      ]
+    },
+    {
+      "polygon_id": 3,
+      "class": "bedroom",
+      "class_id": 3,
+      "vertices": [
+        [
+          679,
+          600
+        ],
+        [
+          679,
+          754
+        ],
+        [
+          270,
+          754
+        ],
+        [
+          270,
+          600
+        ]
+      ],
+      "color": [
+        173,
+        216,
+        230
+      ],
+      "area": 62986.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        474.5,
+        677.0
+      ]
+    },
+    {
+      "polygon_id": 4,
+      "class": "bedroom",
+      "class_id": 3,
+      "vertices": [
+        [
+          865,
+          554
+        ],
+        [
+          886,
+          574
+        ],
+        [
+          1082,
+          603
+        ],
+        [
+          1082,
+          663
+        ],
+        [
+          981,
+          660
+        ],
+        [
+          967,
+          719
+        ],
+        [
+          989,
+          752
+        ],
+        [
+          797,
+          752
+        ],
+        [
+          762,
+          625
+        ]
+      ],
+      "color": [
+        173,
+        216,
+        230
+      ],
+      "area": 42188.5,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        903.8955898490244,
+        657.8525775172453
+      ]
+    },
+    {
+      "polygon_id": 5,
+      "class": "bedroom",
+      "class_id": 3,
+      "vertices": [
+        [
+          762,
+          208
+        ],
+        [
+          675,
+          209
+        ],
+        [
+          675,
+          434
+        ],
+        [
+          631,
+          434
+        ],
+        [
+          631,
+          157
+        ],
+        [
+          762,
+          157
+        ]
+      ],
+      "color": [
+        173,
+        216,
+        230
+      ],
+      "area": 16625.5,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        670.5685874553799,
+        265.1929687734349
+      ]
+    },
+    {
+      "polygon_id": 6,
+      "class": "closet",
+      "class_id": 4,
+      "vertices": [
+        [
+          583,
+          486
+        ],
+        [
+          583,
+          578
+        ],
+        [
+          276,
+          578
+        ],
+        [
+          276,
+          486
+        ]
+      ],
+      "color": [
+        255,
+        228,
+        181
+      ],
+      "area": 28244.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        429.5,
+        532.0
+      ]
+    },
+    {
+      "polygon_id": 7,
+      "class": "closet",
+      "class_id": 4,
+      "vertices": [
+        [
+          821,
+          556
+        ],
+        [
+          761,
+          625
+        ],
+        [
+          796,
+          753
+        ],
+        [
+          706,
+          753
+        ],
+        [
+          732,
+          625
+        ],
+        [
+          693,
+          247
+        ],
+        [
+          770,
+          206
+        ]
+      ],
+      "color": [
+        255,
+        228,
+        181
+      ],
+      "area": 41349.5,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        753.7550247961229,
+        471.24317551781326
+      ]
+    },
+    {
+      "polygon_id": 8,
+      "class": "entrance",
+      "class_id": 7,
+      "vertices": [
+        [
+          1136,
+          607
+        ],
+        [
+          1136,
+          677
+        ],
+        [
+          1090,
+          677
+        ],
+        [
+          1090,
+          607
+        ]
+      ],
+      "color": [
+        240,
+        255,
+        240
+      ],
+      "area": 3220.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        1113.0,
+        642.0
+      ]
+    },
+    {
+      "polygon_id": 9,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          262,
+          604
+        ],
+        [
+          262,
+          752
+        ],
+        [
+          236,
+          752
+        ],
+        [
+          236,
+          604
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 3848.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        249.0,
+        678.0
+      ]
+    },
+    {
+      "polygon_id": 10,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          258,
+          239
+        ],
+        [
+          258,
+          411
+        ],
+        [
+          236,
+          411
+        ],
+        [
+          236,
+          239
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 3784.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        247.0,
+        325.0
+      ]
+    },
+    {
+      "polygon_id": 11,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          1155,
+          243
+        ],
+        [
+          1141,
+          414
+        ],
+        [
+          1155,
+          488
+        ],
+        [
+          1133,
+          503
+        ],
+        [
+          1138,
+          237
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 3561.5,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        1142.3009828009829,
+        368.47491809991806
+      ]
+    },
+    {
+      "polygon_id": 12,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          900,
+          133
+        ],
+        [
+          930,
+          141
+        ],
+        [
+          972,
+          133
+        ],
+        [
+          993,
+          143
+        ],
+        [
+          1042,
+          143
+        ],
+        [
+          1031,
+          153
+        ],
+        [
+          900,
+          155
+        ],
+        [
+          881,
+          141
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 2104.0,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        954.4296758846267,
+        145.80672019030627
+      ]
+    }
+  ],
+  "walls": [],
+  "scale_factor": 0.014388489208633094
+}

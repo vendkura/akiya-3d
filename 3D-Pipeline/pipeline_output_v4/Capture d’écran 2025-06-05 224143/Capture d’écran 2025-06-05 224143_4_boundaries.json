@@ -1,0 +1,618 @@
+{
+  "rooms": [
+    {
+      "polygon_id": 0,
+      "class": "dining_area",
+      "class_id": 1,
+      "vertices": [
+        [
+          574,
+          221
+        ],
+        [
+          574,
+          347
+        ],
+        [
+          313,
+          347
+        ],
+        [
+          313,
+          221
+        ]
+      ],
+      "color": [
+        255,
+        182,
+        193
+      ],
+      "area": 32886.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        443.5,
+        284.0
+      ]
+    },
+    {
+      "polygon_id": 1,
+      "class": "bathroom",
+      "class_id": 2,
+      "vertices": [
+        [
+          1033,
+          824
+        ],
+        [
+          1034,
+          1112
+        ],
+        [
+          722,
+          1111
+        ],
+        [
+          722,
+          824
+        ]
+      ],
+      "color": [
+        255,
+        200,
+        124
+      ],
+      "area": 89670.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        877.8402787082942,
+        967.8269239358614
+      ]
+    },
+    {
+      "polygon_id": 2,
+      "class": "bathroom",
+      "class_id": 2,
+      "vertices": [
+        [
+          672,
+          816
+        ],
+        [
+          672,
+          1119
+        ],
+        [
+          367,
+          1120
+        ],
+        [
+          367,
+          816
+        ]
+      ],
+      "color": [
+        255,
+        200,
+        124
+      ],
+      "area": 92650.5,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        519.4162548050522,
+        967.7501372872048
+      ]
+    },
+    {
+      "polygon_id": 3,
+      "class": "bathroom",
+      "class_id": 2,
+      "vertices": [
+        [
+          1126,
+          202
+        ],
+        [
+          1126,
+          564
+        ],
+        [
+          804,
+          564
+        ],
+        [
+          804,
+          202
+        ]
+      ],
+      "color": [
+        255,
+        200,
+        124
+      ],
+      "area": 116564.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        965.0,
+        383.0
+      ]
+    },
+    {
+      "polygon_id": 4,
+      "class": "bedroom",
+      "class_id": 3,
+      "vertices": [
+        [
+          895,
+          1168
+        ],
+        [
+          895,
+          1200
+        ],
+        [
+          346,
+          1200
+        ],
+        [
+          346,
+          1169
+        ]
+      ],
+      "color": [
+        173,
+        216,
+        230
+      ],
+      "area": 17550.5,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        621.952380952381,
+        1184.2486772486773
+      ]
+    },
+    {
+      "polygon_id": 5,
+      "class": "bedroom",
+      "class_id": 3,
+      "vertices": [
+        [
+          703,
+          204
+        ],
+        [
+          704,
+          589
+        ],
+        [
+          960,
+          590
+        ],
+        [
+          960,
+          776
+        ],
+        [
+          617,
+          775
+        ],
+        [
+          605,
+          204
+        ]
+      ],
+      "color": [
+        173,
+        216,
+        230
+      ],
+      "area": 101857.0,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        740.0410377514831,
+        578.0605581518677
+      ]
+    },
+    {
+      "polygon_id": 6,
+      "class": "bedroom",
+      "class_id": 3,
+      "vertices": [
+        [
+          286,
+          240
+        ],
+        [
+          271,
+          338
+        ],
+        [
+          474,
+          392
+        ],
+        [
+          216,
+          472
+        ],
+        [
+          168,
+          366
+        ],
+        [
+          179,
+          217
+        ],
+        [
+          343,
+          195
+        ]
+      ],
+      "color": [
+        173,
+        216,
+        230
+      ],
+      "area": 37317.5,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        265.31608222490934,
+        345.48153522325225
+      ]
+    },
+    {
+      "polygon_id": 7,
+      "class": "closet",
+      "class_id": 4,
+      "vertices": [
+        [
+          1134,
+          1145
+        ],
+        [
+          1134,
+          1217
+        ],
+        [
+          910,
+          1217
+        ],
+        [
+          910,
+          1145
+        ]
+      ],
+      "color": [
+        255,
+        228,
+        181
+      ],
+      "area": 16128.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        1022.0,
+        1181.0
+      ]
+    },
+    {
+      "polygon_id": 8,
+      "class": "closet",
+      "class_id": 4,
+      "vertices": [
+        [
+          363,
+          831
+        ],
+        [
+          363,
+          1168
+        ],
+        [
+          256,
+          1168
+        ],
+        [
+          256,
+          831
+        ]
+      ],
+      "color": [
+        255,
+        228,
+        181
+      ],
+      "area": 36059.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        309.5,
+        999.5
+      ]
+    },
+    {
+      "polygon_id": 9,
+      "class": "closet",
+      "class_id": 4,
+      "vertices": [
+        [
+          786,
+          204
+        ],
+        [
+          786,
+          346
+        ],
+        [
+          704,
+          346
+        ],
+        [
+          704,
+          204
+        ]
+      ],
+      "color": [
+        255,
+        228,
+        181
+      ],
+      "area": 11644.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        745.0,
+        275.0
+      ]
+    },
+    {
+      "polygon_id": 10,
+      "class": "room",
+      "class_id": 5,
+      "vertices": [
+        [
+          1141,
+          634
+        ],
+        [
+          1087,
+          635
+        ],
+        [
+          1087,
+          688
+        ],
+        [
+          986,
+          688
+        ],
+        [
+          986,
+          587
+        ],
+        [
+          1141,
+          581
+        ]
+      ],
+      "color": [
+        255,
+        255,
+        224
+      ],
+      "area": 13064.0,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        1053.3628221600786,
+        630.4692389086237
+      ]
+    },
+    {
+      "polygon_id": 11,
+      "class": "kitchen",
+      "class_id": 8,
+      "vertices": [
+        [
+          791,
+          399
+        ],
+        [
+          791,
+          541
+        ],
+        [
+          705,
+          541
+        ],
+        [
+          705,
+          399
+        ]
+      ],
+      "color": [
+        144,
+        238,
+        144
+      ],
+      "area": 12212.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        748.0,
+        470.0
+      ]
+    },
+    {
+      "polygon_id": 12,
+      "class": "outdoor_space",
+      "class_id": 9,
+      "vertices": [
+        [
+          673,
+          1119
+        ],
+        [
+          673,
+          816
+        ],
+        [
+          608,
+          747
+        ],
+        [
+          1068,
+          793
+        ],
+        [
+          1055,
+          1141
+        ],
+        [
+          1003,
+          795
+        ],
+        [
+          721,
+          824
+        ],
+        [
+          721,
+          1111
+        ],
+        [
+          921,
+          1138
+        ],
+        [
+          370,
+          1139
+        ]
+      ],
+      "color": [
+        152,
+        251,
+        152
+      ],
+      "area": 42357.5,
+      "is_convex": false,
+      "needs_ear_clipping": true,
+      "centroid": [
+        803.4485068939236,
+        917.79098593501
+      ]
+    },
+    {
+      "polygon_id": 13,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          858,
+          1243
+        ],
+        [
+          358,
+          1246
+        ],
+        [
+          358,
+          1228
+        ],
+        [
+          858,
+          1223
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 9149.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        612.3859649122807,
+        1234.9649122807016
+      ]
+    },
+    {
+      "polygon_id": 14,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          1157,
+          270
+        ],
+        [
+          1151,
+          455
+        ],
+        [
+          1142,
+          455
+        ],
+        [
+          1139,
+          270
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 2962.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        1147.3333333333333,
+        352.22222222222223
+      ]
+    },
+    {
+      "polygon_id": 15,
+      "class": "stairs",
+      "class_id": 11,
+      "vertices": [
+        [
+          1046,
+          169
+        ],
+        [
+          1046,
+          192
+        ],
+        [
+          886,
+          192
+        ],
+        [
+          886,
+          169
+        ]
+      ],
+      "color": [
+        211,
+        211,
+        211
+      ],
+      "area": 3680.0,
+      "is_convex": true,
+      "needs_ear_clipping": false,
+      "centroid": [
+        966.0,
+        180.5
+      ]
+    }
+  ],
+  "walls": [],
+  "scale_factor": 0.013050570962479609
+}

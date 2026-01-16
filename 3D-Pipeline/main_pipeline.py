@@ -11,11 +11,11 @@ from typing import Dict, Tuple, Optional
 import numpy as np
 from PIL import Image
 import logging
-
+ 
 # Import pipeline components
 from fpn_inference import FPNInference
 from boundary_extraction import BoundaryExtractor
-from wall_extrusion_v3 import WallExtrusion3D  # Use improved v3
+from wall_extrusion_v4 import WallExtrusion4
 from export_obj import OBJExporter
 
 
@@ -69,8 +69,8 @@ class Pipeline3D:
         logger.info("Initializing boundary extractor...")
         self.extractor = BoundaryExtractor()
         
-        logger.info("Initializing wall extrusion (v3 - improved)...")
-        self.extrusion = WallExtrusion3D()
+        logger.info("Initializing wall extrusion (v4 - fixed normals)...")
+        self.extrusion = WallExtrusion4(room_height=2.5, wall_thickness=0.1)
         
         logger.info("Initializing OBJ exporter...")
         self.exporter = OBJExporter()

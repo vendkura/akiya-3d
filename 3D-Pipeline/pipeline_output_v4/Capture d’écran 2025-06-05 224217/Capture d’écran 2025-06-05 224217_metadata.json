@@ -1,0 +1,68 @@
+{
+  "image_name": "Capture d\u2019\u00e9cran 2025-06-05 224217",
+  "timestamp": "2026-01-15T18:28:41.076888",
+  "pipeline_version": "v4",
+  "steps": {
+    "fpn_inference": {
+      "mask_shape": [
+        948,
+        1436
+      ],
+      "classes_detected": [
+        "dining_area",
+        "bedroom",
+        "closet",
+        "room",
+        "kitchen",
+        "sliding_door",
+        "stairs",
+        "window"
+      ]
+    },
+    "postprocessing": {
+      "regions_removed": 21,
+      "holes_filled": 3,
+      "pixels_changed": 48216
+    },
+    "rectangular_fitting": {
+      "rectangle_fits": 6,
+      "lshape_fits": 4,
+      "kept_original": 5,
+      "total_rooms": 15
+    },
+    "boundary_extraction": {
+      "total_rooms": 13,
+      "scale_factor": 0.014388489208633094,
+      "convex_rooms": 8,
+      "non_convex_rooms": 5
+    },
+    "wall_extrusion": {
+      "vertices": 134,
+      "triangles": 216,
+      "rooms_processed": 13,
+      "rooms_skipped": 0,
+      "bounds": {
+        "min": [
+          3.3956834532374103,
+          0.0,
+          1.9136690647482015
+        ],
+        "max": [
+          16.618705035971225,
+          2.5,
+          10.848920863309353
+        ],
+        "size": [
+          13.223021582733814,
+          2.5,
+          8.93525179856115
+        ]
+      }
+    },
+    "obj_export": {
+      "obj_file": "pipeline_output_v4/Capture d\u2019\u00e9cran 2025-06-05 224217/Capture d\u2019\u00e9cran 2025-06-05 224217.obj",
+      "mtl_file": "pipeline_output_v4/Capture d\u2019\u00e9cran 2025-06-05 224217/Capture d\u2019\u00e9cran 2025-06-05 224217.mtl",
+      "obj_size_kb": 8.82
+    }
+  }
+}

@@ -1,0 +1,942 @@
+{
+  "image_name": "Capture d\u2019\u00e9cran 2025-06-05 224217_mask",
+  "timestamp": "2026-01-15T16:11:28.759674",
+  "mask_shape": [
+    948,
+    1436
+  ],
+  "total_polygons": 36,
+  "noise_polygons": 15,
+  "suspicious_polygons": 5,
+  "valid_polygons": 16,
+  "class_counts": {
+    "bathroom": 7,
+    "bedroom": 8,
+    "closet": 4,
+    "entrance": 1,
+    "outdoor_space": 6,
+    "sliding_door": 2,
+    "stairs": 8
+  },
+  "class_avg_areas": {
+    "bathroom": 37212.857142857145,
+    "bedroom": 17401.9375,
+    "closet": 20885.0,
+    "entrance": 5387.5,
+    "outdoor_space": 442.5833333333333,
+    "sliding_door": 4449.25,
+    "stairs": 2197.4375
+  },
+  "polygons": [
+    {
+      "polygon_id": 0,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 2854.0,
+      "perimeter": 303.39696860313416,
+      "vertex_count": 9,
+      "is_convex": false,
+      "convexity_ratio": 0.7908007756190633,
+      "bounding_box": [
+        867,
+        667,
+        78,
+        66
+      ],
+      "aspect_ratio": 1.1818181639118461,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.6446882792228628,
+      "issues": [
+        "NON_CONVEX: ratio=0.79"
+      ]
+    },
+    {
+      "polygon_id": 1,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 10848.5,
+      "perimeter": 528.6101716756821,
+      "vertex_count": 8,
+      "is_convex": false,
+      "convexity_ratio": 0.9045316212194495,
+      "bounding_box": [
+        968,
+        659,
+        151,
+        96
+      ],
+      "aspect_ratio": 1.5729166502821184,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.9522658106097248,
+      "issues": []
+    },
+    {
+      "polygon_id": 2,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 100.0,
+      "perimeter": 45.65685415267944,
+      "vertex_count": 12,
+      "is_convex": false,
+      "convexity_ratio": 0.8849557443809226,
+      "bounding_box": [
+        799,
+        598,
+        17,
+        9
+      ],
+      "aspect_ratio": 1.8888886790123691,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08482300849714153,
+      "issues": [
+        "NOISE: area=100 < 500"
+      ]
+    },
+    {
+      "polygon_id": 3,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 214.0,
+      "perimeter": 119.31370830535889,
+      "vertex_count": 4,
+      "is_convex": false,
+      "convexity_ratio": 0.6869983926581111,
+      "bounding_box": [
+        1055,
+        596,
+        53,
+        9
+      ],
+      "aspect_ratio": 5.8888882345679745,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.06747993570632445,
+      "issues": [
+        "NOISE: area=214 < 500",
+        "HIGHLY_NON_CONVEX: ratio=0.69"
+      ]
+    },
+    {
+      "polygon_id": 4,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 31.0,
+      "perimeter": 36.82842707633972,
+      "vertex_count": 6,
+      "is_convex": false,
+      "convexity_ratio": 0.7948717744904674,
+      "bounding_box": [
+        1024,
+        596,
+        17,
+        4
+      ],
+      "aspect_ratio": 4.249998937500266,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08974358872452337,
+      "issues": [
+        "NOISE: area=31 < 500",
+        "NON_CONVEX: ratio=0.79"
+      ]
+    },
+    {
+      "polygon_id": 5,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 112408.5,
+      "perimeter": 1478.7523070573807,
+      "vertex_count": 4,
+      "is_convex": true,
+      "convexity_ratio": 0.9586383929441479,
+      "bounding_box": [
+        255,
+        156,
+        376,
+        333
+      ],
+      "aspect_ratio": 1.129129125738351,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.979319196472074,
+      "issues": []
+    },
+    {
+      "polygon_id": 6,
+      "class_name": "bathroom",
+      "class_id": 2,
+      "area": 134034.0,
+      "perimeter": 1648.3919162750244,
+      "vertex_count": 5,
+      "is_convex": true,
+      "convexity_ratio": 0.9420802743925153,
+      "bounding_box": [
+        763,
+        152,
+        376,
+        431
+      ],
+      "aspect_ratio": 1.146276592696073,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.9710401371962576,
+      "issues": []
+    },
+    {
+      "polygon_id": 7,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 13.0,
+      "perimeter": 32.82842707633972,
+      "vertex_count": 6,
+      "is_convex": false,
+      "convexity_ratio": 0.6190475895691624,
+      "bounding_box": [
+        710,
+        754,
+        16,
+        3
+      ],
+      "aspect_ratio": 5.333331555556148,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.0647619035827665,
+      "issues": [
+        "NOISE: area=13 < 500",
+        "HIGHLY_NON_CONVEX: ratio=0.62"
+      ]
+    },
+    {
+      "polygon_id": 8,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 18.0,
+      "perimeter": 38.0,
+      "vertex_count": 4,
+      "is_convex": true,
+      "convexity_ratio": 0.9999999444444475,
+      "bounding_box": [
+        376,
+        583,
+        19,
+        2
+      ],
+      "aspect_ratio": 9.499995250002375,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.0799999977777779,
+      "issues": [
+        "NOISE: area=18 < 500"
+      ]
+    },
+    {
+      "polygon_id": 9,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 329.0,
+      "perimeter": 182.48528122901917,
+      "vertex_count": 3,
+      "is_convex": true,
+      "convexity_ratio": 0.8350253785913061,
+      "bounding_box": [
+        435,
+        581,
+        87,
+        6
+      ],
+      "aspect_ratio": 14.499997583333736,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.045875634464782655,
+      "issues": [
+        "NOISE: area=329 < 500",
+        "NON_CONVEX: ratio=0.84",
+        "ELONGATED: aspect_ratio=14.5"
+      ]
+    },
+    {
+      "polygon_id": 10,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 42177.5,
+      "perimeter": 1385.8893901109695,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.8058676296227241,
+      "bounding_box": [
+        760,
+        554,
+        331,
+        201
+      ],
+      "aspect_ratio": 1.6467661609613624,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.902933814811362,
+      "issues": [
+        "NON_CONVEX: ratio=0.81"
+      ]
+    },
+    {
+      "polygon_id": 11,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 35.0,
+      "perimeter": 38.82842707633972,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.7142856997084551,
+      "bounding_box": [
+        665,
+        548,
+        5,
+        17
+      ],
+      "aspect_ratio": 3.399999320000136,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08571428498542276,
+      "issues": [
+        "NOISE: area=35 < 500",
+        "NON_CONVEX: ratio=0.71"
+      ]
+    },
+    {
+      "polygon_id": 12,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 73127.5,
+      "perimeter": 1816.7766922712326,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.7186660049362076,
+      "bounding_box": [
+        258,
+        524,
+        474,
+        233
+      ],
+      "aspect_ratio": 2.0343347552174476,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.8593330024681038,
+      "issues": [
+        "NON_CONVEX: ratio=0.72"
+      ]
+    },
+    {
+      "polygon_id": 13,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 66.0,
+      "perimeter": 59.65685415267944,
+      "vertex_count": 11,
+      "is_convex": false,
+      "convexity_ratio": 0.6407766928079933,
+      "bounding_box": [
+        631,
+        489,
+        6,
+        24
+      ],
+      "aspect_ratio": 3.9999993333334443,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.07383495117635971,
+      "issues": [
+        "NOISE: area=66 < 500",
+        "HIGHLY_NON_CONVEX: ratio=0.64"
+      ]
+    },
+    {
+      "polygon_id": 14,
+      "class_name": "bedroom",
+      "class_id": 3,
+      "area": 23449.5,
+      "perimeter": 992.2081507444382,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.7295481060673703,
+      "bounding_box": [
+        614,
+        156,
+        154,
+        322
+      ],
+      "aspect_ratio": 2.090909077331759,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.8647740530336852,
+      "issues": [
+        "NON_CONVEX: ratio=0.73"
+      ]
+    },
+    {
+      "polygon_id": 15,
+      "class_name": "closet",
+      "class_id": 4,
+      "area": 31887.5,
+      "perimeter": 916.4680362939835,
+      "vertex_count": 4,
+      "is_convex": true,
+      "convexity_ratio": 0.9435288199507773,
+      "bounding_box": [
+        258,
+        480,
+        339,
+        105
+      ],
+      "aspect_ratio": 3.2285713978231296,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.9717644099753886,
+      "issues": []
+    },
+    {
+      "polygon_id": 16,
+      "class_name": "closet",
+      "class_id": 4,
+      "area": 1293.5,
+      "perimeter": 302.18376553058624,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.5226262624151006,
+      "bounding_box": [
+        597,
+        241,
+        34,
+        111
+      ],
+      "aspect_ratio": 3.264705786332183,
+      "is_noise": false,
+      "is_suspicious": true,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.38065656560377514,
+      "issues": [
+        "SUSPICIOUS: small area=1294",
+        "HIGHLY_NON_CONVEX: ratio=0.52"
+      ]
+    },
+    {
+      "polygon_id": 17,
+      "class_name": "closet",
+      "class_id": 4,
+      "area": 50302.5,
+      "perimeter": 1563.0609630346298,
+      "vertex_count": 6,
+      "is_convex": false,
+      "convexity_ratio": 0.8128448965280023,
+      "bounding_box": [
+        693,
+        206,
+        129,
+        551
+      ],
+      "aspect_ratio": 4.2713177963463735,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.9064224482640011,
+      "issues": [
+        "NON_CONVEX: ratio=0.81"
+      ]
+    },
+    {
+      "polygon_id": 18,
+      "class_name": "closet",
+      "class_id": 4,
+      "area": 56.5,
+      "perimeter": 47.071067690849304,
+      "vertex_count": 9,
+      "is_convex": false,
+      "convexity_ratio": 0.6569767365467821,
+      "bounding_box": [
+        760,
+        157,
+        17,
+        10
+      ],
+      "aspect_ratio": 1.6999998300000172,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.0745639531446052,
+      "issues": [
+        "NOISE: area=56 < 500",
+        "HIGHLY_NON_CONVEX: ratio=0.66"
+      ]
+    },
+    {
+      "polygon_id": 19,
+      "class_name": "entrance",
+      "class_id": 7,
+      "area": 5387.5,
+      "perimeter": 425.2964633703232,
+      "vertex_count": 9,
+      "is_convex": false,
+      "convexity_ratio": 0.8233361349700716,
+      "bounding_box": [
+        1080,
+        598,
+        62,
+        148
+      ],
+      "aspect_ratio": 2.3870967356919883,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.8205012607365323,
+      "issues": [
+        "NON_CONVEX: ratio=0.82"
+      ]
+    },
+    {
+      "polygon_id": 20,
+      "class_name": "outdoor_space",
+      "class_id": 9,
+      "area": 477.0,
+      "perimeter": 126.62741661071777,
+      "vertex_count": 6,
+      "is_convex": false,
+      "convexity_ratio": 0.7014705872037197,
+      "bounding_box": [
+        575,
+        726,
+        39,
+        31
+      ],
+      "aspect_ratio": 1.2580644755463073,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08507352936018599,
+      "issues": [
+        "NOISE: area=477 < 500",
+        "NON_CONVEX: ratio=0.70"
+      ]
+    },
+    {
+      "polygon_id": 21,
+      "class_name": "outdoor_space",
+      "class_id": 9,
+      "area": 232.5,
+      "perimeter": 85.0710676908493,
+      "vertex_count": 9,
+      "is_convex": false,
+      "convexity_ratio": 0.8333333303464755,
+      "bounding_box": [
+        595,
+        663,
+        11,
+        35
+      ],
+      "aspect_ratio": 3.18181789256201,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08249999986559141,
+      "issues": [
+        "NOISE: area=232 < 500",
+        "NON_CONVEX: ratio=0.83"
+      ]
+    },
+    {
+      "polygon_id": 22,
+      "class_name": "outdoor_space",
+      "class_id": 9,
+      "area": 237.0,
+      "perimeter": 89.65685415267944,
+      "vertex_count": 9,
+      "is_convex": false,
+      "convexity_ratio": 0.8794063047146334,
+      "bounding_box": [
+        597,
+        374,
+        9,
+        39
+      ],
+      "aspect_ratio": 4.333332851851906,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08457328371215851,
+      "issues": [
+        "NOISE: area=237 < 500"
+      ]
+    },
+    {
+      "polygon_id": 23,
+      "class_name": "outdoor_space",
+      "class_id": 9,
+      "area": 526.0,
+      "perimeter": 118.14213538169861,
+      "vertex_count": 6,
+      "is_convex": true,
+      "convexity_ratio": 0.8463394998449887,
+      "bounding_box": [
+        595,
+        311,
+        19,
+        45
+      ],
+      "aspect_ratio": 2.3684209279778456,
+      "is_noise": false,
+      "is_suspicious": true,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.46158487496124717,
+      "issues": [
+        "SUSPICIOUS: small area=526",
+        "NON_CONVEX: ratio=0.85"
+      ]
+    },
+    {
+      "polygon_id": 24,
+      "class_name": "outdoor_space",
+      "class_id": 9,
+      "area": 1150.5,
+      "perimeter": 197.2132030725479,
+      "vertex_count": 6,
+      "is_convex": true,
+      "convexity_ratio": 0.7972972967447697,
+      "bounding_box": [
+        597,
+        228,
+        23,
+        76
+      ],
+      "aspect_ratio": 3.304347682419666,
+      "is_noise": false,
+      "is_suspicious": true,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.4493243241861924,
+      "issues": [
+        "SUSPICIOUS: small area=1150",
+        "NON_CONVEX: ratio=0.80"
+      ]
+    },
+    {
+      "polygon_id": 25,
+      "class_name": "outdoor_space",
+      "class_id": 9,
+      "area": 32.5,
+      "perimeter": 41.071067690849304,
+      "vertex_count": 10,
+      "is_convex": false,
+      "convexity_ratio": 0.5701754285934135,
+      "bounding_box": [
+        777,
+        161,
+        17,
+        7
+      ],
+      "aspect_ratio": 2.4285710816327026,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.07065789428670362,
+      "issues": [
+        "NOISE: area=32 < 500",
+        "HIGHLY_NON_CONVEX: ratio=0.57"
+      ]
+    },
+    {
+      "polygon_id": 26,
+      "class_name": "sliding_door",
+      "class_id": 10,
+      "area": 6413.0,
+      "perimeter": 391.0538227558136,
+      "vertex_count": 6,
+      "is_convex": true,
+      "convexity_ratio": 0.8825431774743627,
+      "bounding_box": [
+        861,
+        581,
+        121,
+        84
+      ],
+      "aspect_ratio": 1.4404761733276648,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.9412715887371814,
+      "issues": []
+    },
+    {
+      "polygon_id": 27,
+      "class_name": "sliding_door",
+      "class_id": 10,
+      "area": 2485.5,
+      "perimeter": 266.6690467596054,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.8008699852421879,
+      "bounding_box": [
+        808,
+        505,
+        53,
+        78
+      ],
+      "aspect_ratio": 1.4716980854396589,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.7203479940968752,
+      "issues": [
+        "NON_CONVEX: ratio=0.80"
+      ]
+    },
+    {
+      "polygon_id": 28,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 819.0,
+      "perimeter": 134.62741661071777,
+      "vertex_count": 8,
+      "is_convex": true,
+      "convexity_ratio": 0.8768736607313986,
+      "bounding_box": [
+        1127,
+        655,
+        31,
+        43
+      ],
+      "aspect_ratio": 1.3870967294484926,
+      "is_noise": false,
+      "is_suspicious": true,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.4692184151828497,
+      "issues": [
+        "SUSPICIOUS: small area=819"
+      ]
+    },
+    {
+      "polygon_id": 29,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 4544.5,
+      "perimeter": 379.2132030725479,
+      "vertex_count": 5,
+      "is_convex": true,
+      "convexity_ratio": 0.8861265475507211,
+      "bounding_box": [
+        227,
+        602,
+        39,
+        152
+      ],
+      "aspect_ratio": 3.8974357975016463,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.7544506190202885,
+      "issues": []
+    },
+    {
+      "polygon_id": 30,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 292.0,
+      "perimeter": 90.97056245803833,
+      "vertex_count": 7,
+      "is_convex": false,
+      "convexity_ratio": 0.8190743315032978,
+      "bounding_box": [
+        1119,
+        596,
+        34,
+        17
+      ],
+      "aspect_ratio": 1.999999882352948,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.09095371657516489,
+      "issues": [
+        "NOISE: area=292 < 500",
+        "NON_CONVEX: ratio=0.82"
+      ]
+    },
+    {
+      "polygon_id": 31,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 3537.5,
+      "perimeter": 650.811182141304,
+      "vertex_count": 5,
+      "is_convex": false,
+      "convexity_ratio": 0.5692790472209077,
+      "bounding_box": [
+        1130,
+        237,
+        26,
+        267
+      ],
+      "aspect_ratio": 10.26923037426037,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.31385580944418157,
+      "issues": [
+        "HIGHLY_NON_CONVEX: ratio=0.57",
+        "ELONGATED: aspect_ratio=10.3"
+      ]
+    },
+    {
+      "polygon_id": 32,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 4636.5,
+      "perimeter": 443.6984843015671,
+      "vertex_count": 4,
+      "is_convex": true,
+      "convexity_ratio": 0.8727529410121876,
+      "bounding_box": [
+        227,
+        231,
+        34,
+        187
+      ],
+      "aspect_ratio": 5.4999998382353,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.5992809411239001,
+      "issues": []
+    },
+    {
+      "polygon_id": 33,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 151.0,
+      "perimeter": 60.485281229019165,
+      "vertex_count": 11,
+      "is_convex": false,
+      "convexity_ratio": 0.8483146019757607,
+      "bounding_box": [
+        774,
+        152,
+        23,
+        11
+      ],
+      "aspect_ratio": 2.090908900826464,
+      "is_noise": true,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.08317415708890924,
+      "issues": [
+        "NOISE: area=151 < 500",
+        "NON_CONVEX: ratio=0.85"
+      ]
+    },
+    {
+      "polygon_id": 34,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 2104.0,
+      "perimeter": 388.56854152679443,
+      "vertex_count": 5,
+      "is_convex": true,
+      "convexity_ratio": 0.7041499328299364,
+      "bounding_box": [
+        881,
+        133,
+        162,
+        23
+      ],
+      "aspect_ratio": 7.043477954631393,
+      "is_noise": false,
+      "is_suspicious": false,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.5453279785055798,
+      "issues": [
+        "NON_CONVEX: ratio=0.70"
+      ]
+    },
+    {
+      "polygon_id": 35,
+      "class_name": "stairs",
+      "class_id": 11,
+      "area": 1495.0,
+      "perimeter": 313.25483322143555,
+      "vertex_count": 5,
+      "is_convex": false,
+      "convexity_ratio": 0.7503136759095037,
+      "bounding_box": [
+        639,
+        126,
+        135,
+        22
+      ],
+      "aspect_ratio": 6.136363357438029,
+      "is_noise": false,
+      "is_suspicious": true,
+      "is_complex": false,
+      "has_self_intersection": false,
+      "quality_score": 0.3500627351819008,
+      "issues": [
+        "SUSPICIOUS: small area=1495",
+        "NON_CONVEX: ratio=0.75"
+      ]
+    }
+  ],
+  "recommendations": [
+    "CRITICAL: 15 noise polygons detected. Increase min_contour_area from 100 to at least 2000",
+    "WARNING: 5 suspicious small polygons. Consider increasing min_contour_area to 5000",
+    "CRITICAL: 7 highly non-convex polygons. Fan triangulation will fail. Use ear-clipping or constrained Delaunay triangulation.",
+    "INFO: Large area variance (max/min = 255x). Some rooms may be fragmented or merged."
+  ]
+}

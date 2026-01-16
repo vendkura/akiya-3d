@@ -1,0 +1,70 @@
+{
+  "image_name": "Capture d\u2019\u00e9cran 2025-06-05 224217",
+  "timestamp": "2026-01-15T16:35:36.707225",
+  "steps": {
+    "fpn_inference": {
+      "mask_shape": [
+        948,
+        1436
+      ],
+      "original_shape": [
+        948,
+        1436
+      ],
+      "classes_detected": [
+        "dining_area",
+        "bedroom",
+        "closet",
+        "room",
+        "kitchen",
+        "sliding_door",
+        "stairs",
+        "window"
+      ],
+      "mask_path": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224217/Capture d\u2019\u00e9cran 2025-06-05 224217_mask.png"
+    },
+    "boundary_extraction": {
+      "total_rooms": 12,
+      "total_walls": 44,
+      "scale_factor": 0.012364760432766615,
+      "stats": {
+        "total_contours_found": 31,
+        "contours_filtered_by_area": 19,
+        "valid_polygons": 12,
+        "convex_polygons": 3,
+        "non_convex_polygons": 9
+      },
+      "boundaries_path": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224217/Capture d\u2019\u00e9cran 2025-06-05 224217_boundaries_v2.json"
+    },
+    "wall_extrusion": {
+      "vertices": 170,
+      "faces": 292,
+      "triangles": 292,
+      "rooms_processed": 12,
+      "rooms_skipped": 0,
+      "bounds": {
+        "min": [
+          2.8068006182380216,
+          0.0,
+          1.9412673879443585
+        ],
+        "max": [
+          14.28129829984544,
+          2.5,
+          9.310664605873262
+        ],
+        "size": [
+          11.474497681607419,
+          2.5,
+          7.369397217928904
+        ]
+      }
+    },
+    "obj_export": {
+      "obj_file": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224217/Capture d\u2019\u00e9cran 2025-06-05 224217.obj",
+      "mtl_file": "pipeline_output_v2/Capture d\u2019\u00e9cran 2025-06-05 224217/Capture d\u2019\u00e9cran 2025-06-05 224217.mtl",
+      "obj_size_kb": 11.44140625,
+      "mtl_size_kb": 0.52734375
+    }
+  }
+}

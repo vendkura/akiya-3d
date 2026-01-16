@@ -1,0 +1,49 @@
+{
+  "steps": {
+    "fpn_inference": {
+      "mask_shape": [
+        1294,
+        1580
+      ],
+      "original_shape": [
+        1294,
+        1580
+      ],
+      "classes_detected": {
+        "dining_area": 1053889,
+        "bathroom": 52284,
+        "bedroom": 340947,
+        "closet": 229882,
+        "room": 84124,
+        "door": 32687,
+        "entrance": 136332,
+        "kitchen": 63,
+        "outdoor_space": 16979,
+        "sliding_door": 58997,
+        "stairs": 11943,
+        "window": 26393
+      },
+      "mask_path": "pipeline_output/diagnostic/diagnostic_mask.png"
+    },
+    "boundary_extraction": {
+      "num_rooms": 44,
+      "num_walls": 87,
+      "scale_factor": 0.0292358803986711,
+      "boundaries_path": "pipeline_output/diagnostic/diagnostic_boundaries.json"
+    },
+    "wall_extrusion": {
+      "num_vertices": 2040,
+      "num_faces": 3224,
+      "room_height": 2.5,
+      "wall_thickness": "removed (v2 simplified)",
+      "geometry_path": "pipeline_output/diagnostic/diagnostic_geometry.json"
+    },
+    "obj_export": {
+      "obj_file": "pipeline_output/diagnostic/diagnostic.obj",
+      "mtl_file": "pipeline_output/diagnostic/diagnostic.mtl",
+      "obj_size_kb": 224.2666015625,
+      "mtl_size_kb": 1.0322265625,
+      "num_materials": 10
+    }
+  }
+}

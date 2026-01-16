@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Original Floor Plan vs 3D Model Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .item {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #4CAF50;
+        }
+        .item h2 {
+            margin-top: 0;
+            color: #4CAF50;
+            text-align: center;
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .analysis {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+        .analysis h3 {
+            color: #ff9800;
+            margin-top: 0;
+        }
+        .issues {
+            list-style: none;
+            padding: 0;
+        }
+        .issues li {
+            padding: 8px;
+            margin: 5px 0;
+            background: #1a1a1a;
+            border-left: 3px solid #f44336;
+            padding-left: 15px;
+        }
+        .good {
+            border-left-color: #4CAF50;
+            color: #4CAF50;
+        }
+        .bad {
+            border-left-color: #f44336;
+            color: #ff6b6b;
+        }
+        @media (max-width: 900px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Original Floor Plan vs 3D Model Comparison</h1>
+        
+        <div class="comparison">
+            <div class="item">
+                <h2>Original Floor Plan (2D)</h2>
+                <img src="../U-NET/data/floorplan/Capture d'écran 2025-06-05 224143.png" alt="Original Floor Plan">
+                <p><strong>Format:</strong> Segmentation mask with colored rooms<br>
+                   <strong>Size:</strong> 1294 × 1580 pixels<br>
+                   <strong>Rooms:</strong> 44 detected<br>
+                   <strong>Colors:</strong> Each room has a unique color</p>
+            </div>
+            
+            <div class="item">
+                <h2>Generated 3D Model (Blender)</h2>
+                <p><em>View the 3D model in Blender or 3D viewer</em></p>
+                <p><strong>File:</strong> pipeline_output/Capture d'écran 2025-06-05 224143/Capture d'écran 2025-06-05 224143.obj<br>
+                   <strong>Size:</strong> 201.7 KB<br>
+                   <strong>Vertices:</strong> 1360<br>
+                   <strong>Faces:</strong> 4080<br>
+                   <strong>Wall Thickness:</strong> 10cm</p>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h3>📊 Analysis: What We See vs Expected</h3>
+            
+            <h4 style="color: #4CAF50;">✓ GOOD - What's Working:</h4>
+            <ul class="issues">
+                <li class="good">✓ <strong>Room detection:</strong> 44 rooms extracted correctly from 2D segmentation</li>
+                <li class="good">✓ <strong>Color assignment:</strong> Each room has its distinct color preserved</li>
+                <li class="good">✓ <strong>Geometry count:</strong> 1360 vertices and 4080 faces (solid geometry created)</li>
+                <li class="good">✓ <strong>Wall thickness:</strong> 10cm walls now have physical presence (not paper-thin)</li>
+                <li class="good">✓ <strong>3D structure:</strong> Model has proper height (2.5m) and room separation</li>
+            </ul>
+
+            <h4 style="color: #ff9800;">⚠️ PROBLEMS - What Needs Investigation:</h4>
+            <ul class="issues">
+                <li class="bad">✗ <strong>Room layout mismatch:</strong> Blender screenshot shows large gaps between adjacent rooms</li>
+                <li class="bad">✗ <strong>Disconnected geometry:</strong> Rooms appear floating/separated instead of touching at walls</li>
+                <li class="bad">✗ <strong>Wall alignment:</strong> Walls between adjacent rooms don't match up</li>
+                <li class="bad">✗ <strong>Floor plan accuracy:</strong> 3D model doesn't match the original 2D layout</li>
+                <li class="bad">✗ <strong>Polygon deformation:</strong> Some rooms appear stretched or misshapen</li>
+            </ul>
+
+            <h4 style="color: #2196F3;">🔍 Root Cause Analysis:</h4>
+            <p>The issue likely stems from:</p>
+            <ol>
+                <li><strong>Boundary extraction simplification:</strong> The Douglas-Peucker algorithm (ε=0.02) is too aggressive, causing room polygons to lose their original shape</li>
+                <li><strong>Wall creation logic:</strong> The wall extrusion may be offsetting rooms incorrectly, creating gaps</li>
+                <li><strong>Coordinate system:</strong> Possible mismatch between 2D segmentation coordinates and 3D vertex positions</li>
+                <li><strong>Scale factor calculation:</strong> The scale (0.0292 m/pixel) may not be correct, causing rooms to be sized/positioned wrong</li>
+            </ol>
+
+            <h4 style="color: #00BCD4;">🎯 Next Steps:</h4>
+            <ol>
+                <li><strong>Debug boundary extraction:</strong> Compare original room polygons vs simplified versions</li>
+                <li><strong>Verify coordinate mapping:</strong> Check if room positions in 3D match the original 2D locations</li>
+                <li><strong>Reduce polygon simplification:</strong> Try ε=0.005 instead of 0.02 to preserve room shapes</li>
+                <li><strong>Check wall creation:</strong> Ensure walls are created at correct boundaries without offsets</li>
+                <li><strong>Validate scale factor:</strong> Verify room sizes are realistic (typical room ~4-5m)</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

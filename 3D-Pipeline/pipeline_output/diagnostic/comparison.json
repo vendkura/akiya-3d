@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-01-15T16:11:28.766491",
+  "num_images": 2,
+  "images": [
+    {
+      "name": "Capture d\u2019\u00e9cran 2025-06-05 224143_mask",
+      "total_polygons": 60,
+      "noise_polygons": 28,
+      "valid_polygons": 21,
+      "class_counts": {
+        "dining_area": 1,
+        "bathroom": 5,
+        "bedroom": 9,
+        "closet": 9,
+        "room": 1,
+        "door": 1,
+        "entrance": 1,
+        "kitchen": 5,
+        "outdoor_space": 16,
+        "sliding_door": 3,
+        "stairs": 9
+      }
+    },
+    {
+      "name": "Capture d\u2019\u00e9cran 2025-06-05 224217_mask",
+      "total_polygons": 36,
+      "noise_polygons": 15,
+      "valid_polygons": 16,
+      "class_counts": {
+        "bathroom": 7,
+        "bedroom": 8,
+        "closet": 4,
+        "entrance": 1,
+        "outdoor_space": 6,
+        "sliding_door": 2,
+        "stairs": 8
+      }
+    }
+  ],
+  "summary": {
+    "total_polygons": 96,
+    "total_noise": 43,
+    "total_suspicious": 16,
+    "avg_quality": 0
+  },
+  "common_issues": [
+    {
+      "issue": "CRITICAL: 28 noise polygons detected. Increase min_contour_area from 100 to at least 2000",
+      "occurrences": 1
+    },
+    {
+      "issue": "WARNING: 11 suspicious small polygons. Consider increasing min_contour_area to 5000",
+      "occurrences": 1
+    },
+    {
+      "issue": "CRITICAL: 10 highly non-convex polygons. Fan triangulation will fail. Use ear-clipping or constrained Delaunay triangulation.",
+      "occurrences": 1
+    },
+    {
+      "issue": "INFO: Large area variance (max/min = 280x). Some rooms may be fragmented or merged.",
+      "occurrences": 1
+    },
+    {
+      "issue": "CRITICAL: 15 noise polygons detected. Increase min_contour_area from 100 to at least 2000",
+      "occurrences": 1
+    },
+    {
+      "issue": "WARNING: 5 suspicious small polygons. Consider increasing min_contour_area to 5000",
+      "occurrences": 1
+    },
+    {
+      "issue": "CRITICAL: 7 highly non-convex polygons. Fan triangulation will fail. Use ear-clipping or constrained Delaunay triangulation.",
+      "occurrences": 1
+    },
+    {
+      "issue": "INFO: Large area variance (max/min = 255x). Some rooms may be fragmented or merged.",
+      "occurrences": 1
+    }
+  ]
+}
